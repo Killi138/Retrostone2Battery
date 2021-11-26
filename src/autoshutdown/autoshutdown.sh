@@ -31,10 +31,12 @@ while true; do
         sleep 3m
         echo "slept 3 minutes\n"
         # check again
-        if [ $(cat /sys/class/power_supply/axp20x-battery/capacity) -le 3 ]; then
+        if [ $(cat /sys/class/power_supply/axp20x-battery/capacity) -le 3 ] && [ $(cat /sys/class/power_supply/axp20x-battery/status) != 'Charging' ]; then
                 # shutdown if its not plugged in
                 echo "capacity still under limit, shutdown\n"
                 sudo shutdown -h now
+        else
+                echo "capacity over 3 or charging\n"
         fi
     fi
     echo "battery okay\n"
