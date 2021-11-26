@@ -11,6 +11,8 @@ The autoshutdown-service contains a script which reads the battery capacity and 
 
 ### Setup
 ```bash
+git clone https://github.com/Killi138/Retrostone2Battery
+cd Retrostone2Battery/src/
 sudo chmod 0755 ./install_autoshutdown.sh
 ./install_autoshutdown.sh
 ```
@@ -22,6 +24,8 @@ The battery information script shows you the actual battery level, if it's charg
 
 ### Setup
 ```bash
+git clone https://github.com/Killi138/Retrostone2Battery
+cd Retrostone2Battery/src/
 sudo chmod 0755 ./install_battery.sh
 ./install_battery.sh
 ```
@@ -30,11 +34,11 @@ sudo chmod 0755 ./install_battery.sh
 ```bash
 vi /opt/retropie/configs/all/autostart.sh
 
-add the following line
+-- add the following line --
 
 /home/pi/RetroPie/retropiemenu/Battery.sh;
 
-just before
+-- just before --
 
 pulseaudio --start;
 ```
@@ -46,6 +50,21 @@ If you want an easy way to dis-/enable wifi or HDMI you can execute this script 
 
 ### Setup
 ```bash
+git clone https://github.com/Killi138/Retrostone2Battery
+cd Retrostone2Battery/src/
 sudo chmod 0755 ./install_shortcuts.sh
 ./install_shortcuts.sh
 ```
+
+## ZDoom with functional buttonmappings (including menu)
+Delivered by the default os-image ZDoom (found here: https://github.com/rheit/zdoom) was playable but there was a problem with the button mappings while in menu (or go into the menu). The buttons of the Retrostone 2 didn't work in main menu. You had to have a keyboard with you to start a new game...so I compiled it myself with the changed mappings (ZDoom ignores the configured button mappings while in menu, that's the problem).
+To get a full controllable and playable ZDoom engine you have to
+
+### Setup
+```bash
+git clone https://github.com/Killi138/Retrostone2Battery
+cd Retrostone2Battery/src/
+sudo chmod 0755 ./install_zdoom.sh
+./install_zdoom.sh
+```
+
